@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/bharatkalluri/moviescore/internal/getratings"
+	"github.com/wwwutz/moviescore/internal/getratings"
 	"github.com/ttacon/chalk"
 	"github.com/urfave/cli"
 	"os"
