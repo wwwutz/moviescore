@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/wwwutz/moviescore/internal/getratings"
-	"github.com/ttacon/chalk"
 	"github.com/urfave/cli"
 	"os"
 )
@@ -33,7 +32,7 @@ func main() {
 
 		getratings.ASCIIPoster()
 		if c.Bool("parentalguide") == true && c.Bool("reviews") == true {
-			fmt.Println(chalk.Red, "One option at a time, cant have -pg and -r flags at the same time!")
+			fmt.Println("One option at a time, cant have -pg and -r flags at the same time!")
 		}
 		if c.Bool("parentalguide") == true {
 			getratings.GetImdbParentsGuide(c.Args().Get(0))

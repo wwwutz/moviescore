@@ -3,7 +3,6 @@ package getratings
 import (
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
-	"github.com/ttacon/chalk"
 	"strings"
 )
 
@@ -35,7 +34,7 @@ func GetImdbRatings(mname string) ImdbMovie {
 
 // Scrapes IMDB Parental Ratings
 func GetImdbParentsGuide(MovieName string) {
-	fmt.Println(chalk.Magenta, "Parental Guide:")
+	fmt.Println("Parental Guide:")
 	movieName := strings.Replace(MovieName, " ", "+", 9)
 	movieInfo := new(ImdbMovie)
 	err := GetJSON("http://www.omdbapi.com/?t="+movieName+"&plot=full", movieInfo)
@@ -57,15 +56,15 @@ func GetImdbParentsGuide(MovieName string) {
 	Profanity = DataCleaner(Profanity)
 	Alcohol = DataCleaner(Alcohol)
 	Intense = DataCleaner(Intense)
-	fmt.Println(chalk.Green.NewStyle().WithTextStyle(chalk.Bold), "Sex and Nudity", chalk.Reset)
+	fmt.Println("Sex and Nudity")
 	fmt.Println(SexAndNudity)
-	fmt.Println(chalk.Green.NewStyle().WithTextStyle(chalk.Bold), "Violence And Gore", chalk.Reset)
+	fmt.Println("Violence And Gore")
 	fmt.Println(ViolenceAndGore)
-	fmt.Println(chalk.Green.NewStyle().WithTextStyle(chalk.Bold), "Profanity", chalk.Reset)
+	fmt.Println("Profanity")
 	fmt.Println(Profanity)
-	fmt.Println(chalk.Green.NewStyle().WithTextStyle(chalk.Bold), "Alcohol/Drugs/Smoking", chalk.Reset)
+	fmt.Println("Alcohol/Drugs/Smoking")
 	fmt.Println(Alcohol)
-	fmt.Println(chalk.Green.NewStyle().WithTextStyle(chalk.Bold), "Frightening/Intense Scenes", chalk.Reset)
+	fmt.Println("Frightening/Intense Scenes")
 	fmt.Println(Intense)
 }
 

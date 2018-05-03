@@ -3,7 +3,6 @@ package getratings
 import (
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
-	"github.com/ttacon/chalk"
 	"strings"
 )
 
@@ -41,11 +40,11 @@ func RtReviewScraper(mname string, year string) {
 	}
 	finder := doc.Find("#reviews .review_quote")
 	if len(finder.Nodes) > 0 {
-		fmt.Println(chalk.Magenta.NewStyle().WithTextStyle(chalk.Bold), "Reviews from RT!", chalk.Reset)
+		fmt.Println("Reviews from RT!",)
 		doc.Find("#reviews .review_quote").Each(func(i int, s *goquery.Selection) {
 			review := s.Find("p").Text()
 			fmt.Println(strings.TrimSpace(review))
-			fmt.Println(chalk.Magenta, "-------------------", chalk.Reset)
+			fmt.Println("-------------------")
 		})
 	} else {
 		fmt.Println("Looks like Rt also needs the year argument!")
